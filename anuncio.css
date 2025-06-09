@@ -1,76 +1,119 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+}
+
 .ad-container {
-    display: flex;
-    max-width: 720px;
-    height: 90px;
-    background-color: #111;
-    color: white;
-    font-family: sans-serif;
-    border-radius: 8px;
-    overflow: hidden;
-    text-align: center;
+  box-sizing: border-box;
+  width: 728px;
+  height: 90px;
+  display: flex;
+  background-color: rgb(140, 179, 222);
+  color: white;
+  font-family: sans-serif;
+  border-radius: 8px;
+  overflow: hidden;
+  text-align: center;
+  align-items: center;
+  margin: 0;
+  border: none;
+}
+
+.ad-image {
+  width: 90px;
+  height: 90px;
+  flex-shrink: 0;
+  object-fit: cover;
+  display: block;
+}
+
+.ad-content {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  height: 100%;
+}
+
+.ad-content h2 {
+  margin: 0;
+  font-size: 1.1rem;
+  width: 100%;
+}
+
+.ad-button {
+  margin-top: 6px;
+  background-color: rgb(15, 29, 65);
+  color: #fff;
+  padding: 6px 12px;
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.98rem;
+  width: 100px;
+  cursor: pointer;
+  transition: transform 0.2s;
+  /* Tamaño fijo en móvil y escritorio */
+  box-sizing: border-box;
+}
+
+.ad-button:hover {
+  transform: scale(1.05);
+}
+
+/* MOBILE: 300x600px */
+@media (max-width: 600px) {
+  .ad-container {
+    flex-direction: column;
+    width: 300px;
+    height: 600px;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
   }
-  
   .ad-image {
-    width: 90px;
-    height: 90px;
-    flex-shrink: 0;
+    width: 300px;
+    height: 200px;
     object-fit: cover;
   }
-  
   .ad-content {
     flex: 1;
-    padding: 10px;
+    padding: 0;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    justify-content: flex-start;   /* Alinea arriba */
     align-items: center;
-    text-align: center;
-
+    height: 100%;
+    width: 100%;
+    padding-top: 40px;             /* Espacio desde arriba */
   }
-  
   .ad-content h2 {
-    margin: 0;
-    font-size: 0.9rem;
+    font-size: 1.4rem;
+    margin-bottom: 36px;           /* Espacio entre título y botón */
+    margin-top: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: auto;
   }
-  
   .ad-button {
-    margin-top: 6px;
-    background-color: #b1dbf9;
-    color: black;
-    padding: 6px 12px;
-    border: none;
-    border-radius: 4px;
-    font-weight: bold;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 0.9rem;
-    width: 100px;      
+    font-size: 1.1rem;
+    margin-top: 60px;
+    margin-bottom: 80px;           /* Espacio entre botón y borde inferior */
+    width: 150px;                  /* Tamaño fijo */
+    padding: 6px 12px;             /* Igual que escritorio */
+    align-self: center;
+    box-sizing: border-box;
   }
-
-  .ad-button:hover {
-    transform: scale(1.05);
-  }
-  
-  
-  @media (max-width: 600px) {
-    .ad-container {
-      flex-direction: column;
-      max-width: 300px;
-      height: auto;
-    }
-  
-    .ad-image {
-      width: 100%;
-      height: auto;
-    }
-  
-    .ad-content h2 {
-      font-size: 1.2rem;
-    }
-  
-    .ad-button {
-      font-size: 1rem;
-      padding: 10px 16px;
-    }
-  }
-  
+}
